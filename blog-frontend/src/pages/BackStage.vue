@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div class="nav_bar">
-        <NavBar></NavBar>
+    <NavBar @selectedMenuChange="HandleMenuChange"></NavBar>
+    <div id="blog-main-content">
+      <HomeView v-if="menuIndex == 1"></HomeView>
+      <AboutView v-else-if="menuIndex == 2"></AboutView>
     </div>
-    <HomeView></HomeView>
-    <AboutView></AboutView>
   </div>
-
 </template>
 
 <script>
@@ -16,19 +15,31 @@ import AboutView from "@/components/AboutView";
 
 export default {
   name: "BackStage",
+  data(){
+    return {
+      menuIndex: 1
+    }
+  },
   components: {
     NavBar,
     HomeView,
     AboutView
   },
   methods: {
-
+    HandleMenuChange(index) {
+      console.log(index);
+      this.menuIndex = index;
+    }
   }
 }
 </script>
 
 <style scoped>
-.nav_bar {
-  height: 100vh;
+#blog-nav-menu {
+
+}
+
+#blog-main-content {
+
 }
 </style>

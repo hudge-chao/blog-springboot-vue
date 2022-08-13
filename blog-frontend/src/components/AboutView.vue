@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="name">名字</div>
+    <h2> About Page </h2>
   </div>
 </template>
 
@@ -11,10 +11,6 @@ export default {
 </script>
 
 <style scoped>
-#name {
-  width: 100px;
-  height: 100px;
-  color: black;
-}
+
 
 </style>

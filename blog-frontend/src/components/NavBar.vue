@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-col :xs="{span: 5}" :sm="{span: 4}">
+  <div class="blog-sider-menu">
+    <el-col :xs="{span: 5, offset: 0}" :sm="{span: 4, offset: 0}" class="blog-sider-menu-col">
       <el-menu
           default-active="1"
           class="el-menu-vertical-demo"
@@ -48,17 +48,33 @@
 <script>
 export default {
   name: "NavBar",
+  data(){
+    return {
+      selectedMenuIndex: 0
+    }
+  },
   methods: {
     handleSelect(index) {
-      console.log(index);
+      this.selectedMenuIndex = index;
+      this.$emit("selectedMenuChange", this.selectedMenuIndex);
     }
   }
 }
 </script>
 
 <style scoped>
+
+.blog-sider-menu {
+  left: 0;
+  top: 0;
+  margin: 0 0 0 0;
+}
+
+.blog-sider-menu-col {
+  /*height: 100vh;*/
+}
+
 .el-menu-vertical-demo {
   height: 100vh;
 }
-
 </style>
