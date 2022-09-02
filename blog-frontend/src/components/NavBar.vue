@@ -1,6 +1,6 @@
 <template>
-  <div class="blog-sider-menu">
-    <el-col :xs="{span: 5, offset: 0}" :sm="{span: 4, offset: 0}" class="blog-sider-menu-col">
+  <div>
+    <el-col :span="24">
       <el-menu
           default-active="1"
           class="el-menu-vertical-demo"
@@ -42,6 +42,7 @@
         </el-menu-item>
       </el-menu>
     </el-col>
+
   </div>
 </template>
 
@@ -64,17 +65,8 @@ export default {
 
 <style scoped>
 
-.blog-sider-menu {
-  left: 0;
-  top: 0;
-  margin: 0 0 0 0;
-}
-
-.blog-sider-menu-col {
-  /*height: 100vh;*/
-}
-
 .el-menu-vertical-demo {
   height: 100vh;
+  border-right: 0;
 }
 </style>
